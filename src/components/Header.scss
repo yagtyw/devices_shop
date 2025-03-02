@@ -1,0 +1,112 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    overflow: hidden;
+    width: 100vw;
+  
+    &__panel {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    &__list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      animation: scrollText 15s linear infinite; // Рабочая бесшовная анимация
+    }
+  
+    li {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      margin: 0 78px;
+      position: relative;
+  
+      &::after {
+        content: '•';
+        position: absolute;
+        right: -39px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+  
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+  
+  // Бесшовная анимация
+  @keyframes scrollText {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.33%); // Двигаем на треть длины списка
+    }
+  }
+  
+
+  .TopMenu {
+    background-image: url('/img/banner.png'); // Путь к картинке
+    background-size: cover; // Растягиваем картинку на весь блок
+    background-position: center; // Центрируем картинку
+    background-repeat: no-repeat; // Запрещаем повторение картинки
+    height: 26px;
+    margin: 35px 62px 0; // Отступы сверху 35px, по бокам 62px
+    padding: 0; // Обнуляем padding
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .TopMenu__panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; // Ограничиваем максимальную ширину блока
+  }
+  
+  .TopMenu__panel ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .TopMenu__panel li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    flex: 1; // Равномерное распределение пространства
+    text-align: center; // Центрируем текст внутри каждого li
+  }
+  
+  .TopMenu__panel .brandName {
+    font-size: 24px;
+    margin: 0 115px; // Увеличиваем отступ справа на 10px
+    flex: 0 0 auto; // Запрещаем растягивание и сжатие
+  }
+  
+  .TopMenu__panel li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .TopMenu__panel li a:hover {
+    text-decoration: underline;
+  }
+  
